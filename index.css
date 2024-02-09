@@ -1,0 +1,14 @@
+* {
+    font-family: "Audiowide", sans-serif; 
+    font-size: 20px; 
+}
+
+body { 
+    background-image: radial-gradient(circle, #57585c, #27282b);
+} 
+
+.navbar {
+    background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
+  }
+
