@@ -1,3 +1,6 @@
+<?php
+include 'server.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +18,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="login.php">
         <img src="img/nas_nobg.png" alt="Logo" width="50" height="50" class="d-inline-block align-top">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +54,7 @@
       </div>
       <div class="col-md-6 d-none d-md-block" style="margin-top: 100px;">
         <h1>NASAR SAABDULA</h1>
-        <h6 class="text-warning">Full Stack Developer</h6>
+        <h6 class="text-warning">Full Stack Web Developer</h6>
         <button class="btn btn-dark btn-sm">Get to know me  &#11206;</button>
       </div>
     </div>

@@ -1,0 +1,15 @@
+* {
+    font-family: "Audiowide", sans-serif; 
+    font-size: 20px; 
+}
+
+body { 
+    background-image: radial-gradient(circle, #57585c, #27282b);
+} 
+.login-form {
+    align-items: center;
+    min-height: 70vh; /* Lower position */
+    background-color: rgba(255, 255, 255, 0.5); /* Transparent and frosted background */
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Box shadow for effect */
+}
