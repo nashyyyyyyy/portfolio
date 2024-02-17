@@ -12,3 +12,22 @@ body {
     backdrop-filter: blur(10px); 
   }
 
+  .stick-to-h1 h1 {
+    position: sticky;
+    top: 0;
+}
+#mySection {
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 20px; 
+}
+
+
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+}
