@@ -31,3 +31,44 @@ body {
     display: inline-block;
     margin: 0 10px;
 }
+
+.section {
+    position: relative;
+    height: 100vh; /* Make the section cover the viewport height */
+  }
+
+  .bg-frosted {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    z-index: -1; /* Move the frosted background behind the content */
+  }
+
+  .bg-dark-transparent {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)) !important; /* Gradient background */
+  }
+
+  .text-white {
+    color: white;
+  }
+
+  /* Style for content inside section */
+  .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  /* Center content vertically and horizontally */
+  .v-center {
+    align-items: center;
+  }
+
+  .h-center {
+    justify-content: center;
+  }

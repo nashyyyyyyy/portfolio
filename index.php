@@ -32,13 +32,13 @@ include 'server.php';
             <a class="nav-link text-warning" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#about" id="myLink">ABOUT ME</a>
+            <a class="nav-link text-light" href="#skills" id="myLink">SKILLS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#contact">CONTACT</a>
+            <a class="nav-link text-light" href="#projects">PROJECTS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#" >ACCOUNT</a>
+            <a class="nav-link text-light" href="#about" >ABOUT ME</a>
           </li>
         </ul>
       </div>
@@ -48,48 +48,118 @@ include 'server.php';
     <div class="row">
       <div class="col-md-6">
         <section>
-          <div>
+          <div class="d-none d-md-block">
             <img src="img/mypic.png" width="500" height="550" alt="My Picture">
           </div>
         </section>
       </div>
-      <div class="col-md-6 d-none d-md-block" style="margin-top: 100px;">
-        <h1>NASAR SAABDULA</h1>
-        <h6 class="text-warning">Full Stack Web Developer</h6>
-        <button class="btn btn-dark btn-sm">Get to know me  &#11206;</button>
+      <div class="col-md-6" style="margin-top: 100px;">
+        <h1 class="text-warning">NASAR</h1> <h1 class="text-light">SAABDULA</h1>
+        <h6 class="text-light">Full Stack Web Developer</h6>
+        <div class="dropdown">
+        <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="socialDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Connect with me
+        </button>
+        <div class="dropdown-menu" aria-labelledby="socialDropdown">
+            <a class="dropdown-item" href="https://www.facebook.com/nasar.saabdula" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a class="dropdown-item" href="https://www.instagram.com/nashy.io" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a class="dropdown-item" href="https://github.com/nashyyyyyyy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a class="dropdown-item" href="https://www.tiktok.com/@nas._rrr" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+        </div>
+    </div>
       </div>
     </div>
   </div>
 
-  <section id="about" class="bg-dark-transparent">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-white text-center">ABOUT ME</h1>
-                <p class="text-white">I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.</p>
-                <p class="text-white">One cool thing about me is, I am into the Minimalist lifestyle and it transfers to all of the things I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is changing my perspective on everything.</p>
-            </div>
+
+  <section id="skills" class="section bg-dark-transparent">
+
+    <div class="container section-content v-center">
+      <div class="row">
+        <div class="col-md-12 text-white text-center">
+          <h2 class="text-warning">SKILLS</h2>
+          <h3> Front-end expertise </h3>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">HTML</div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">CSS</div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">JavaScript</div>
+          </div>
+          <br>
+          <h3> Back-end expertise </h3>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">PHP</div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">PYTHON</div>
+          </div>
+          <br>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">MYSQL</div>
+          </div>
         </div>
+      </div>
     </div>
 </section>
-<section id="contact" class="bg-dark-transparent">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-white text-center">CONTACT</h1>
-                    <div class="social-icons text-center">
-                        <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/YourProfile" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/YourUsername" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.tiktok.com/@YourUsername" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
+
+<section id="projects" class="section bg-dark-transparent">
+    <div class="container section-content v-center">
+      <div class="row">
+        <h2 class="text-warning text-center">PROJECTS</h2>
+        <div class="col-md-4">
+          
+          <div class="card text-white bg-success mb-3">
+            <div class="card-header">PC kart</div>
+            <div class="card-body">
+              <h5 class="card-title">e-Commerce website</h5>
+              <p class="card-text">I am one of the developer of the PC kart which is my first e-Commerce project.</p>
             </div>
+          </div>
         </div>
-    </section>
+        <div class="col-md-4">
+          <div class="card text-white bg-danger mb-3">
+            <div class="card-header">AOFRS</div>
+            <div class="card-body">
+              <h5 class="card-title">Software Engineering Project</h5>
+              <p class="card-text">I am one of the programmer of the Administrative Office Management System for the Admin of Western Mindanao State University.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-header">VAXSPACE</div>
+            <div class="card-body">
+              <h5 class="card-title">Capstone Project</h5>
+              <p class="card-text">I am the developer of the capstone project that is still in progress.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="about" class="section bg-dark-transparent">
+
+    <div class="container section-content v-center">
+      <div class="row">
+        <div class="col-md-12 text-white">
+          <h2 class="text-warning text-center">ABOUT ME</h2>
+          <p>I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.</p>
+          <p>One cool thing about me is, I am into the Minimalist lifestyle and it transfers to all of the things I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is changing my perspective on everything.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
