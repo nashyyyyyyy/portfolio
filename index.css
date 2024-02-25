@@ -5,6 +5,7 @@
 
 body { 
     background-image: radial-gradient(circle, #57585c, #27282b);
+    scroll-behavior: smooth;
 } 
 
 .navbar {
@@ -30,6 +31,44 @@ body {
 .social-icons a {
     display: inline-block;
     margin: 0 10px;
+}
+
+.solid-break-line {
+  border: 0;
+  height: 10px; /* Adjust the height as needed */
+  width: 85dvw;
+  background-color: #000; /* Change the color as needed */
+  margin-top: 0; /* Adjust the margin-top as needed */
+  margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+}
+
+
+.sidenav {
+  height: 38%;
+  width: 60px;
+  position: sticky; /* Changed from fixed to sticky */
+  z-index: 1;
+  top: 170px; /* Adjust the top position as needed */
+  left: 5px;
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px); 
+  opacity: 0.8; 
+  border-radius: 20px;
+}
+
+
+.sidenav a {
+  padding: 10px; 
+  text-decoration: none; 
+  font-size: 10px; 
+  color: #fff; 
+  display: block; 
+  transition: 0.3s; 
+}
+
+.sidenav a:hover {
+  background-color: #ffc107; 
+  border-radius: 20px;
 }
 
 .section {
@@ -72,3 +111,4 @@ body {
   .h-center {
     justify-content: center;
   }
+  

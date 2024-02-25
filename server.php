@@ -1,19 +1,15 @@
 <?php
-// Database connection parameters
-$host = "localhost"; // Change this to your database host
-$username = "root"; // Change this to your database username
-$password = ""; // Change this to your database password
-$database = "portfolio_cms"; // Change this to your database name
+// Define database connection variables
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'portfolio_cms';
 
-// Connect to the database
-$connect = new mysqli($host, $username, $password, $database);
+// Create connection
+$connect = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 // Check connection
-if ($connect->connect_error) {
-    die("Connection failed: " . $connect->connect_error);
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-
-// Close the connection
-$connect->close();
 ?>

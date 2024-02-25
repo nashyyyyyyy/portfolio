@@ -17,10 +17,10 @@ include 'server.php';
 </head>
  
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="home">
     <div class="container">
-      <a class="navbar-brand" href="login.php">
-        <img src="img/nas_nobg.png" alt="Logo" width="50" height="50" class="d-inline-block align-top">
+      <a class="navbar-brand" href="cms/login.php">
+        <img src="img/nas_logo.png" alt="Logo" width="50" height="50" class="d-inline-block align-top">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -29,7 +29,7 @@ include 'server.php';
       <div class="collapse navbar-collapse" id="menubar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link text-warning" href="#">HOME</a>
+            <a class="nav-link text-warning" href="#home">HOME</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="#skills" id="myLink">SKILLS</a>
@@ -47,15 +47,17 @@ include 'server.php';
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <section>
+      <section>
           <div class="d-none d-md-block">
-            <img src="img/mypic.png" width="500" height="550" alt="My Picture">
+              <img src="img/mypic.png" width="500" height="550" alt="My Picture">
           </div>
-        </section>
+      </section>
+
+      <hr class="solid-break-line d-none d-md-block">
       </div>
       <div class="col-md-6" style="margin-top: 100px;">
-        <h1 class="text-warning">NASAR</h1> <h1 class="text-light">SAABDULA</h1>
-        <h6 class="text-light">Full Stack Web Developer</h6>
+        <h1 class="text-warning" style="text-shadow: 3px 3px 3px black;">NASAR</h1> <h1 class="text-light" style="text-shadow: 3px 3px 3px black;">SAABDULA</h1>
+        <h6 class="text-light" style="text-shadow: 3px 3px 3px black;">Full Stack Web Developer</h6>
         <div class="dropdown">
         <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="socialDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Connect with me
@@ -64,13 +66,19 @@ include 'server.php';
             <a class="dropdown-item" href="https://www.facebook.com/nasar.saabdula" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
             <a class="dropdown-item" href="https://www.instagram.com/nashy.io" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
             <a class="dropdown-item" href="https://github.com/nashyyyyyyy" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a class="dropdown-item" href="https://www.tiktok.com/@nas._rrr" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a class="dropdown-item" href="mailto:mrrious26@gmail.com" target="_blank"><i class="fab fa-google"></i> Gmail</a>
         </div>
     </div>
       </div>
     </div>
   </div>
 
+  <div class="sidenav bg-dark text-center">
+        <a href="#home" class="text-light"><i class="fas fa-home"></i><br>Home</a>
+        <a href="#skills" class="text-light"><i class="fas fa-atom"></i><br>Skills</a>
+        <a href="#projects" class="text-light"><i class="fas fa-tools"></i><br>Projects</a>
+        <a href="#about" class="text-light"><i class="fas fa-info-circle"></i><br>About</a>
+  </div>
 
   <section id="skills" class="section bg-dark-transparent">
 
@@ -145,22 +153,45 @@ include 'server.php';
 </section>
 
 <section id="about" class="section bg-dark-transparent">
-
+          
     <div class="container section-content v-center">
       <div class="row">
         <div class="col-md-12 text-white">
           <h2 class="text-warning text-center">ABOUT ME</h2>
           <p>I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.</p>
-          <p>One cool thing about me is, I am into the Minimalist lifestyle and it transfers to all of the things I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is changing my perspective on everything.</p>
+          <p>One cool thing about me is, I am into the Minimalist lifestyle and it applies to all of the things that I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is, thus changing my perspective on everything.</p>
+          
+
         </div>
       </div>
     </div>
 </section>
+<script>
+    window.addEventListener('scroll', function() {
+        var skillsSection = document.getElementById('skills');
+        var sidenav = document.querySelector('.sidenav');
 
+        if (isElementInViewport(skillsSection)) {
+            sidenav.classList.add('sticky');
+        } else {
+            sidenav.classList.remove('sticky');
+        }
+    });
+
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 </body>
 </html>

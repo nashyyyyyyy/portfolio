@@ -1,0 +1,38 @@
+* {
+    font-family: "Audiowide", sans-serif; 
+    font-size: 20px; 
+}
+body { 
+    background-image: radial-gradient(circle, #57585c, #27282b);
+} 
+.sidenav {
+    height: 47.5%; 
+    width: 60px; 
+    position: fixed; 
+    z-index: 1; 
+    top: 150px; 
+    left: 5px; 
+    background-color: rgba(4, 4, 4, 0.5); 
+
+    border-radius:20px;
+}
+
+.sidenav a {
+    padding: 10px; 
+    text-decoration: none; 
+    font-size: 10px; 
+    color: #fff; 
+    display: block; 
+    transition: 0.3s; 
+}
+
+.sidenav a:hover {
+    background-color: #ffc107; 
+    border-radius: 20px;
+}
+
+
+.frosted-bg {
+    background-color: rgba(4, 4, 4, 0.5); 
+    backdrop-filter: blur(10px); 
+}
