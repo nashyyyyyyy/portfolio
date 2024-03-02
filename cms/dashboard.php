@@ -28,7 +28,25 @@
         <img src="../img/NAS_nobg.png" alt="Logo" width="50" height="50" class="d-inline-block  ml-2 "> CONTENT MANAGEMENT SYSTEM <span class="text-secondary float-right mt-2 mr-2 d-none d-sm-inline">Welcome, <span class="text-warning"><?php echo $_SESSION['username']; ?>!</span></span>
     </div>
 
+    <section id="dashboard" class="section">
+        DASHBOARD
+    </section>
 
+    <section id="skills" class="section">
+       SKILLS
+    </section>
+
+    <section id="projects" class="section">
+       PROJECTS
+    </section>
+
+    <section id="about" class="section">
+        ABOUT ME
+    </section>
+
+    <section id="content-management" class="section">
+        
+    </section>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
