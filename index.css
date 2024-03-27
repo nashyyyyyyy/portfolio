@@ -87,9 +87,7 @@ body {
     z-index: -1; /* Move the frosted background behind the content */
   }
 
-  .bg-dark-transparent {
-    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)) !important; /* Gradient background */
-  }
+
 
   .text-white {
     color: white;
@@ -111,4 +109,5 @@ body {
   .h-center {
     justify-content: center;
   }
+  
   

@@ -73,14 +73,14 @@ include 'server.php';
     </div>
   </div>
 
-  <div class="sidenav bg-dark text-center">
+  <div class="sidenav bg-dark text-center d-none d-md-block">
         <a href="#home" class="text-light"><i class="fas fa-home"></i><br>Home</a>
         <a href="#skills" class="text-light"><i class="fas fa-atom"></i><br>Skills</a>
         <a href="#projects" class="text-light"><i class="fas fa-tools"></i><br>Projects</a>
         <a href="#about" class="text-light"><i class="fas fa-info-circle"></i><br>About</a>
   </div>
 
-  <section id="skills" class="section bg-dark-transparent">
+  <section id="skills" class="section bg-dark-transparent mt-5">
 
     <div class="container section-content v-center">
       <div class="row">
@@ -116,7 +116,7 @@ include 'server.php';
     </div>
 </section>
 
-<section id="projects" class="section bg-dark-transparent">
+<section id="projects" class="section bg-dark-transparent mt-5">
     <div class="container section-content v-center">
       <div class="row">
         <h2 class="text-warning text-center">PROJECTS</h2>
@@ -152,13 +152,15 @@ include 'server.php';
     </div>
 </section>
 
-<section id="about" class="section bg-dark-transparent">
+<section id="about" class="section bg-dark-transparent mt-5">
           
     <div class="container section-content v-center">
       <div class="row">
         <div class="col-md-12 text-white">
           <h2 class="text-warning text-center">ABOUT ME</h2>
-          <p>I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.</p>
+          <p>I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.
+            Overall, software engineer is just so cool to hear 
+          </p>
           <p>One cool thing about me is, I am into the Minimalist lifestyle and it applies to all of the things that I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is, thus changing my perspective on everything.</p>
           
 

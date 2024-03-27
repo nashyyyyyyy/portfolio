@@ -36,3 +36,28 @@ body {
     background-color: rgba(4, 4, 4, 0.5); 
     backdrop-filter: blur(10px); 
 }
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
+
+}
+
+
+.text-warning {
+    color: #ffc107; 
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-white {
+    color: #fff; 
+}
