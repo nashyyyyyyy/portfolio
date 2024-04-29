@@ -15,7 +15,90 @@ include 'server.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
- 
+<?php
+include 'server.php'; // Include your database connection file
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    // Validate form data (you can add more validation if needed)
+    if (empty($name) || empty($email) || empty($message)) {
+        echo "All fields are required";
+        exit;
+    }
+
+    // Check connection
+    if ($connect->connect_error) {
+        die("Connection failed: " . $connect->connect_error);
+    }
+
+    // Prepare SQL query
+    $sql = "INSERT INTO message (name, email, message) VALUES ('$name', '$email', '$message')";
+
+    // Execute SQL query
+    if ($connect->query($sql) === TRUE) {
+      echo "<div id='successMessage' class='success'>Message inserted successfully</div>";
+    } else {
+        echo "Error inserting message: " . $connect->error;
+    }
+
+    // Close database connection
+    $connect->close();
+}
+?>
+<script>
+// Remove success message after 3 seconds
+setTimeout(function(){
+    var successMessage = document.getElementById('successMessage');
+    if(successMessage){
+        successMessage.style.display = 'none';
+    }
+}, 3000);
+</script>
+
+<style>
+/* Style for success message */
+.success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align:center;
+    font-size:15px;
+}
+/* Style for error message */
+.error {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align:center;
+    font-size:15px;
+}
+.about-text {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+</style>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="home">
     <div class="container">
@@ -39,6 +122,9 @@ include 'server.php';
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="#about" >ABOUT ME</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-light" data-toggle="modal" data-target="#exampleModalCenter">MESSAGE ME</a>
           </li>
         </ul>
       </div>
@@ -79,8 +165,47 @@ include 'server.php';
         <a href="#projects" class="text-light"><i class="fas fa-tools"></i><br>Projects</a>
         <a href="#about" class="text-light"><i class="fas fa-info-circle"></i><br>About</a>
   </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Messaging Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="post" >
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="text-right">
+         
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        </form>
+      </div>
+      
+      
+    
+    </div>
+  </div>
+</div>
 
-  <section id="skills" class="section bg-dark-transparent mt-5">
+
+  <div style="margin-top:-100px">
+  <section id="skills" class="section bg-dark-transparent">
 
     <div class="container section-content v-center">
       <div class="row">
@@ -153,21 +278,49 @@ include 'server.php';
 </section>
 
 <section id="about" class="section bg-dark-transparent mt-5">
-          
     <div class="container section-content v-center">
-      <div class="row">
-        <div class="col-md-12 text-white">
-          <h2 class="text-warning text-center">ABOUT ME</h2>
-          <p>I aspire to become a software engineer, crafting innovative solutions to complex problems and contributing to the advancement of technology. I'm passionate about learning new technologies and continuously improving my skills.
-            Overall, software engineer is just so cool to hear 
-          </p>
-          <p>One cool thing about me is, I am into the Minimalist lifestyle and it applies to all of the things that I do including this Portfolio, I am just amazed on how relaxing and pleasing minimalism is, thus changing my perspective on everything.</p>
-          
-
+        <div class="row">
+            <div class="col-md-12 text-white">
+                <h2 class="text-warning text-center">ABOUT ME</h2>
+                <div class="about-content">
+                    <?php 
+                    // Include your database connection file
+                    include 'server.php';
+                    
+                    
+                    // Query to fetch data from the "basic-info" table
+                    $basic_info_sql = "SELECT * FROM basic_info";
+                    $basic_info_result = $connect->query($basic_info_sql);
+                    
+                    if ($basic_info_result->num_rows > 0) {
+                        // Output data of each row
+                        while($basic_info_row = $basic_info_result->fetch_assoc()) {
+                            // Display basic info data here
+                            echo "<table class='table table-bordered'>";
+                           
+                            echo "<tr><th>Full Name</th><td>{$basic_info_row['fullname']}</td></tr>";
+                            echo "<tr><th>Email</th><td>{$basic_info_row['email']}</td></tr>";
+                            echo "<tr><th>Contact</th><td>{$basic_info_row['contact']}</td></tr>";
+                            echo "<tr><th>Education</th><td>{$basic_info_row['education']}</td></tr>";
+                            echo "<tr><th>Address</th><td>{$basic_info_row['address']}</td></tr>";
+                            echo "<tr><th>Hobby</th><td>{$basic_info_row['hobby']}</td></tr>";
+                            echo "<tr><th>About me</th><td>{$basic_info_row['content']}</td></tr>";
+                            echo "</table>";
+                        }
+                    } else {
+                        echo "No basic info found";
+                    }
+                    
+                    // Close database connection
+                    $connect->close();
+                    ?>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 </section>
+
+</div>
 <script>
     window.addEventListener('scroll', function() {
         var skillsSection = document.getElementById('skills');
@@ -197,3 +350,4 @@ include 'server.php';
 
 </body>
 </html>
+
