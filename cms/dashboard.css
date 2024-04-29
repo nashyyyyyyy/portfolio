@@ -6,11 +6,11 @@ body {
     background-image: radial-gradient(circle, #57585c, #27282b);
 } 
 .sidenav {
-    height: 47.5%; 
+    height: 57.3%; 
     width: 60px; 
     position: fixed; 
     z-index: 1; 
-    top: 150px; 
+    top: 140px; 
     left: 5px; 
     background-color: rgba(4, 4, 4, 0.5); 
 

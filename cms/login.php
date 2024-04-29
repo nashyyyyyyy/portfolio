@@ -25,12 +25,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit; // Make sure to exit after redirection
     } else {
         // If user does not exist or password is incorrect, display error message
-        echo '<script>alert("Invalid username or password")</script>';
+         echo '<style>.error-alert { background-color: #ffcccc; color: #ff0000; padding: 10px; position: fixed; top: 10px; left: 50%; transform: translateX(-50%); border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); }</style>';
+        echo '<div class="error-alert">Invalid username or password</div>';
+        echo '<script>setTimeout(function() { document.querySelector(".error-alert").style.display = "none"; }, 2000);</script>';
     }
 }
 ?>
 
+<?php
+// Include the database connection file
+include 'server.php';
 
+// Fetch the logo path from the intro table
+$sql = "SELECT logo FROM intro WHERE id = 1";
+$result = $connect->query($sql);
+
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $logoPath = $row["logo"];
+} else {
+    // If no logo is found, set a default path
+    $logoPath = "../img/nas.png";
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="shortcut icon" type="image/x-icon" href="../img/nas.png">
+<link rel="shortcut icon" type="image/x-icon" href="<?php echo $logoPath; ?>">
   <link rel="stylesheet" href="login.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide"> 
@@ -51,8 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-4 offset-md-4 login-form">
-      <h4 class="text-center mb-4 mt-3">Login to <strong class="text-warning" style="font-size:30px">CMS</strong></h4>
-      <form action="login.php" method="post" autocomplete="off">
+      <h4 class="text-center mb-3 mt-3">Login to <strong class="text-warning" style="font-size:30px;">CMS</strong></h4>
+      <form action="login.php" method="post" autocomplete="off" style="padding:20px;" >
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" class="form-control" id="username" name="username" required>

@@ -48,7 +48,7 @@ body {
   width: 60px;
   position: sticky; /* Changed from fixed to sticky */
   z-index: 1;
-  top: 170px; /* Adjust the top position as needed */
+  top: 160px; /* Adjust the top position as needed */
   left: 5px;
   background-color: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(10px); 
